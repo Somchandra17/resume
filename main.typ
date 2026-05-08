@@ -84,10 +84,10 @@
 #cventry(
   tl: [*Burp AI Agent - Upstream Open-Source Contribution*],
   tr: [#translate-date(4, 2026)],
-  bl: [#link("https://github.com/six2dez/burp-ai-agent/pull/44")[six2dez/burp-ai-agent \#44]],
+  bl: [#link("https://github.com/six2dez/burp-ai-agent")[six2dez/burp-ai-agent]],
   br: [],
 )[
-- Contributed a merged PR to a Burp Suite extension that brings AI-assisted analysis, MCP tooling, privacy controls, and passive/active scanning into security workflows.
+- Contributed to a Burp Suite extension that brings AI-assisted analysis, MCP tooling, privacy controls, and passive/active scanning into security workflows.
 - Added NVIDIA NIM backend support in Kotlin by extending the OpenAI-compatible backend with streaming, payload customization, default headers, and custom health-check hooks instead of duplicating request logic.
 - Implemented UI/settings persistence and improved HTTP 429 handling so backend errors no longer leave the chat workflow stuck, increasing reliability for AI-assisted Burp testing.
 ]
