@@ -29,7 +29,7 @@
 - *Application & API Security*: gray-box web/API VAPT, OWASP Top 10, GraphQL security, CVSS scoring and SLA mapping
 - *Mobile Offensive Security*: Android/iOS SAST/DAST, OWASP MASTG/MASVS, Frida/objection, SSL pinning, root/jailbreak detection
 - *Security Automation*: Burp extension development (Montoya API/Java, Extender API/Jython), Python, Kotlin, FastAPI, VAPT-to-Jira
-- *Attack Surface*: subfinder, amass, httpx, and testssl.sh; CVE checks before public templates; Nessus
+- *Attack Surface*: external recon and exposure checks (subfinder, amass, httpx, testssl.sh), Nessus scanning, and CVE validation before public templates
 - *Incident response*: credential-exposure response, secrets inventory, and read-only rotation checks
 
 == Experience
