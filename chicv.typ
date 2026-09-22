@@ -60,10 +60,10 @@
   )
 
   let the-font = (
+    "TeX Gyre Pagella",
     "Palatino",
-    "Georgia",
-    "Times New Roman",
-    "Charter",
+    "Liberation Serif",
+    "EB Garamond",
   )
   show heading.where(
     level: 2
