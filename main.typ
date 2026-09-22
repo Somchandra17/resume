@@ -47,8 +47,9 @@
 - Built a Java Burp extension that decodes and re-encodes the Driver App zlib-compressed integer-array protocol, unlocking active testing of that traffic; later ported the extension to the Montoya API
 - Showed an Android SSL-pinning bypass needed a rooted, instrumented device and did not reproduce on the production build
 - Ran the first in-house AI/LLM assessment of an internal chatbot; prompt injection bypassed tool-persona and policy controls, and that work became a reusable method for later assessments
-- Drove credential-exposure response across 3,264 secret records; a June 2026 read-only re-check found all 41 Slack webhooks and bot tokens still live after a claimed rotation, and a history rewrite dropped 13,784 records in 201 files from the pushed branches
-- Migrated *Nessus* from Azure Windows to hardened AWS Linux and automated weekly Advanced scans (Sunday IST), with reports uploaded to Google Drive; built *ExternalVAPT2JIRA* (PDF/HTML findings to Jira Stories and Bugs) and *vapt-revalidator* (FastAPI IDOR/BAC retests through Burp), and neither tool writes to Jira without human approval
+- Migrated *Nessus* from Azure Windows to hardened AWS Linux and automated weekly Advanced scans (Sunday IST), with reports uploaded to Google Drive
+- Built *External VAPT to Jira*, which files an external VAPT report into Jira in one click instead of a 4--5 hour manual pass, and does not post until it is approved
+- Built *VAPT Revalidator*, a FastAPI worker that retests IDOR and broken access control through Burp and writes the Jira comment only after a person approves it
 - Manually validated Apache Tomcat CVE-2025-66614 (client-certificate verification bypass) and CVE-2026-24734 (OCSP revocation bypass) on UAT before public nuclei templates existed, and shared the results as a team reference
 ]
 
@@ -123,6 +124,24 @@
   br: [],
 )[
 - Dockerized recon across 17 tools and 10 phases, with resume support and structured JSON so finished tool outputs are skipped on rerun
+]
+
+#cventry(
+  tl: [*TrashFrame*],
+  tr: [#translate-date(6, 2026)],
+  bl: [#githublink("Somchandra17/TrashFrame")],
+  br: [#link("https://trash-frame.vercel.app")[trash-frame.vercel.app]],
+)[
+- Built a Next.js app that turns a Spotify album or song link into a printable poster, with 14 themes and DPI export for real frames
+]
+
+#cventry(
+  tl: [*w-bonkers*],
+  tr: [#translate-date(7, 2026)],
+  bl: [#githublink("Somchandra17/w-bonkers")],
+  br: [],
+)[
+- Built an NSE portfolio copilot for Claude Code and Codex: a deterministic plan file, Todoist order tasks, and local archives, with no auto-trading
 ]
 
 == Certifications
