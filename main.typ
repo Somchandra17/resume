@@ -3,34 +3,34 @@
 #show: chicv
 
 #let months = ("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
-#let translate-date(month, year) = [#months.at(month - 1), #year]
+#let translate-date(month, year) = [#months.at(month - 1) #year]
 #let current = [Present]
 
-// Header
 = #smallcaps[Som Chandra]
 
 #text(size: 10pt)[
-  #link("mailto:somchandra.infosec@gmail.com")[somchandra.infosec\@gmail.com] •
-  #iconlink("tel:+919507988170", icon: "phone", text: "9507988170") •
-  #iconlink("https://github.com/somchandra17", icon: "github", text: "somchandra17") •
-  #iconlink("https://www.linkedin.com/in/somchandra17/", icon: "linkedin", text: "somchandra17") •
-  #link("https://tryhackme.com/p/somchandra17")[TryHackMe] •
-  #iconlink("https://somm.tf", icon: "globe", text: "somm.tf")
+  #link("mailto:somchandra.infosec@gmail.com")[somchandra.infosec\@gmail.com]
+  | #link("tel:+919507988170")[+91 9507988170]
+  | #link("https://github.com/somchandra17")[github.com/somchandra17] \
+  #link("https://www.linkedin.com/in/somchandra17/")[linkedin.com/in/somchandra17]
+  | #link("https://tryhackme.com/p/somchandra17")[tryhackme.com/p/somchandra17]
+  | #link("https://somm.tf")[somm.tf]
 ]
 
+#page-one[
 == Summary
 
-- Application Security / Cyber Security Engineer focused on web, API, Android, and iOS VAPT, with hands-on experience in gray-box testing, mobile runtime analysis, AppSec automation, vulnerability validation, and developer-facing remediation.
-- Own end-to-end internal VAPT and AuthenticOne external coordination; ship tooling for revalidation, vendor/internal report-to-Jira filing, and weekly Nessus Advanced scanning.
-- Security+ and eWPTXv2 certified; Top 1% on TryHackMe with Hall of Fame and 20+ NCIIPC India responsible-disclosure acknowledgments.
+- 156 internal findings, FY2025--26 (42 Critical/Blocker, 57 High, 57 Medium) across 10 web, API, and Android cycles, CVSS-to-SLA mapping
+- Built three in-house tools now in team use: a 9-phase Android DAST framework (\~90% less time per app), GQLSweep (170+ GraphQL checks), and a Burp extension for a proprietary mobile protocol
+- Certified CompTIA Security+ (SY0-701) and eWPTXv2; top 1% on TryHackMe; 20+ NCIIPC India responsible-disclosure acknowledgments
 
 == Technical Skills
 
-- *Application Security*: Web/API/Mobile VAPT, OWASP Top 10, OWASP MASVS, gray-box testing, manual exploitation, vulnerability triage, false-positive validation, secure remediation review
-- *Mobile Security*: Android/iOS testing, root/jailbreak detection, SSL pinning validation and bypass testing, Frida runtime analysis, WebView security, Google Play Integrity, anti-tampering
-- *Security Tools*: Burp Suite, OWASP ZAP, Nessus, Nmap, nuclei, Frida, MobSF, JADX, apktool, drozer, ADB, Postman, Wireshark, Ghidra, testssl
-- *Automation & Development*: Python, Bash, Kotlin, Java, JavaScript, Node.js, REST, GraphQL, Docker, Git, Linux, FastAPI
-- *Infrastructure & Workflow*: AWS EC2/AMI, Kubernetes, Jenkins, Azure, Jira, Confluence, security reporting, vendor VAPT coordination
+- *Application & API Security*: gray-box web/API VAPT, OWASP Top 10, GraphQL security, CVSS scoring and SLA mapping
+- *Mobile Offensive Security*: Android/iOS SAST/DAST, OWASP MASTG/MASVS, Frida/objection, SSL pinning, root/jailbreak detection
+- *Security Automation*: Burp extension development (Montoya API/Java, Extender API/Jython), Python, Kotlin, FastAPI, VAPT-to-Jira
+- *Attack Surface*: subfinder, amass, httpx, and testssl.sh; CVE checks before public templates; Nessus
+- *Incident response*: credential-exposure response, secrets inventory, and read-only rotation checks
 
 == Experience
 
@@ -38,68 +38,63 @@
   tl: [*MoveInSync*],
   tr: [#translate-date(6, 2025) -- #current],
   bl: [_Cyber Security Engineer_],
-  br: [Bengaluru, Karnataka, India],
+  br: [Bengaluru, India],
 )[
-- Conduct gray-box VAPT across web, API, and mobile product surfaces (ETS, WIS, Driver, Guard, and related apps); coordinate AuthenticOne external intake, triage, and fix validation.
-- Validate and revalidate Android controls against rooted-device and Frida runtime attacks, including Play Integrity and root-detection disposition with engineering remediation follow-up; built a Driver App Byte Decoder Burp extension for driver-app traffic analysis.
-- Triage UST SecurityScorecard findings against production (Feb 2026 Detailed Report mostly false positives; Jun 2026 prod header/TLS checks clean); file rescan evidence and Jira follow-up.
-- Author the Jenkins CI/CD secret-exposure RCA and drive post-incident credential inventory and rotation verification, with leadership status updates through remediation tracking.
-- Convert vendor and internal VAPT PDF/HTML into developer-ready Jira Stories and Bugs via *ExternalVAPT2JIRA* (dry-run until approve), including AuthenticOne report disposition.
-- Build and ship *vapt-revalidator*: FastAPI console and worker driving IDOR/BAC retests through Burp and browser tooling into human-approved Jira comments and QA transitions.
-- Migrate *Nessus* from Azure Windows to hardened AWS Linux, then automate weekly Advanced scans through Stage 1 to Stage 2 (Sunday IST); publish reports to Google Drive and Slack.
+- Reported 156 FY2025--26 VAPT findings across 10 internal cycles on web, API, and Android, including an unauthenticated API, IDOR in billing reports, and a WebSocket leaking live cab location; drove CVSS-to-SLA remediation with engineering; 180 tickets reported, 100+ assigned, about 93% of assigned tickets closed
+- Built a 9-phase Android DAST framework (adb, drozer, apktool) that cut per-app assessment from 1--2 days to under 1 hour (about 90%), and that work contributed to the team declining a paid PortSwigger Burp DAST purchase
+- Built *GQLSweep*, a Burp extension running 170+ automated GraphQL checks across 12 categories from one right-click, surfacing alias-abuse DoS and excessive data exposure later confirmed by an external vendor
+- Owned external VAPT across four vendors and four major cycles (web, Android, iOS, Driver App): false-positive filtering, compensating controls the vendor accepted, revalidation, and on-time reports for enterprise audits
+- Built a Java Burp extension that decodes and re-encodes the Driver App zlib-compressed integer-array protocol, unlocking active testing of that traffic; later ported the extension to the Montoya API
+- Showed an Android SSL-pinning bypass needed a rooted, instrumented device and did not reproduce on the production build
+- Ran the first in-house AI/LLM assessment of an internal chatbot; prompt injection bypassed tool-persona and policy controls, and that work became a reusable method for later assessments
+- Drove credential-exposure response across 3,264 secret records; a June 2026 read-only re-check found all 41 Slack webhooks and bot tokens still live after a claimed rotation, and a history rewrite dropped 13,784 records in 201 files from the pushed branches
+- Migrated *Nessus* from Azure Windows to hardened AWS Linux and automated weekly Advanced scans (Sunday IST), with reports uploaded to Google Drive; built *ExternalVAPT2JIRA* (PDF/HTML findings to Jira Stories and Bugs) and *vapt-revalidator* (FastAPI IDOR/BAC retests through Burp), and neither tool writes to Jira without human approval
+- Manually validated Apache Tomcat CVE-2025-66614 (client-certificate verification bypass) and CVE-2026-24734 (OCSP revocation bypass) on UAT before public nuclei templates existed, and shared the results as a team reference
 ]
 
 #cventry(
   tl: [*MoveInSync*],
   tr: [#translate-date(1, 2025) -- #translate-date(5, 2025)],
   bl: [_Application Security Intern_],
-  br: [Bengaluru, Karnataka, India],
+  br: [Bengaluru, India],
 )[
-- Supported API, web, and mobile security testing through endpoint enumeration, manual vulnerability validation, evidence capture, and reproducible ticket creation.
-- Performed pre-assessment sanity testing for Android/iOS builds to identify blocking issues before external VAPT engagements.
-- Prototyped API discovery and external exposure checks that later informed reusable internal security automation.
-- Assisted with Nessus scan review, triage, reporting, documentation, and developer follow-up through remediation closure.
+- Raised critical reflected XSS findings on the transport-management API in an internal Apr--May 2025 manual and automated VAPT, and published the report
+- Escalated critical issues to engineering leads the same day during a May 2025 production-clone assessment
+- Surfaced a gap on an Employee Experience employee-data call during a May 2025 authentication retrofit; engineering wrapped the call in authentication
 ]
+]
+
+#resume-split()
 
 #cventry(
   tl: [*Securaeon Initiative*],
   tr: [#translate-date(2, 2022) -- #translate-date(7, 2022)],
   bl: [_Cyber Security R&D Intern_],
-  br: [Remote/Kolkata, West Bengal],
+  br: [Remote / Kolkata],
 )[
-- Created security walkthroughs, proof-of-concept material, and practical lab content for upcoming cybersecurity products and courses.
+- Created security walkthroughs, proof-of-concept material, and practical lab content for upcoming cybersecurity products and courses
 ]
 
 #cventry(
   tl: [*Bugcrowd*],
   tr: [#translate-date(10, 2021) -- #translate-date(12, 2021)],
-  bl: [_Security Researcher_],
-  br: [Freelance],
+  bl: [_Security Researcher (freelance)_],
+  br: [Remote],
 )[
-- Reported web security vulnerabilities through open bug bounty programs, including findings later recognized in Hall of Fame listings and responsible-disclosure acknowledgments.
-- Communicated impact, proof of concept, and remediation context to program security teams to support timely validation and closure.
+- Reported web vulnerabilities through open bug bounty programs, and wrote impact, proof of concept, and remediation context for program security teams
 ]
 
 == Projects
 
 #cventry(
-  tl: [*Burp AI Agent - Upstream Open-Source Contribution*],
-  tr: [#translate-date(4, 2026)],
-  bl: [#link("https://github.com/six2dez/burp-ai-agent")[six2dez/burp-ai-agent]],
-  br: [],
-)[
-- Contributed to an upstream Burp Suite extension for AI-assisted analysis and testing workflows.
-- Merged NVIDIA NIM backend support and OpenAI-compatible hooks in Kotlin, plus HTTP 429 chat handling so AI-assisted Burp sessions stay reliable (PR 44).
-]
-
-#cventry(
   tl: [*TrashDroid*],
-  tr: [#translate-date(4, 2026)],
+  tr: [#translate-date(3, 2026) -- #translate-date(7, 2026)],
   bl: [#githublink("Somchandra17/TrashDroid")],
   br: [],
 )[
-- Built a terminal Android DAST framework in Python that orchestrates adb, drozer, apktool, and related tooling across nine assessment phases.
-- Produced AI-ready Markdown reports covering exported components, storage, logcat, memory, backup, manifest, post-logout behavior, and PII detection.
+- Built the public counterpart of the internal Android DAST framework: nine Python phases orchestrating adb, drozer, apktool, and sqlite3
+- Covered exported-component SQLi and path traversal, SQLite deep-dumps, logcat, heap and /proc maps, ADB backup, manifest review, post-logout re-launch and intent extras, and PII and secret detection
+- Added Frida 17 bypasses for SSL pinning, root detection, and debugger detection, plus an AI-review triage package
 ]
 
 #cventry(
@@ -108,71 +103,39 @@
   bl: [#githublink("Somchandra17/TrashiOS")],
   br: [],
 )[
-- Built an iOS SAST/DAST counterpart pairing libimobiledevice with Frida/objection for static and dynamic assessment on a jailbroken USB device.
-- Ran a thirteen-phase flow with AI-ready reporting grounded in OWASP MASTG/MASVS; used a scrubbed office copy (iOSAutoAudit) to triage findings on ETS UAT iOS.
+- Built the public counterpart of the internal iOS framework: 13-phase SAST and DAST on a USB-connected jailbroken device via libimobiledevice, SSH-over-USB, and Frida/objection
+- Mapped checks to OWASP MASTG and MASVS, from Info.plist and Mach-O through keychain protection class, URL schemes, backup, and pinning and jailbreak, and triaged the AI-ready package from an ETS UAT iOS build
+]
+
+#cventry(
+  tl: [*Burp AI Agent*],
+  tr: [#translate-date(4, 2026)],
+  bl: [#link("https://github.com/six2dez/burp-ai-agent")[six2dez/burp-ai-agent]],
+  br: [],
+)[
+- Merged an NVIDIA NIM backend and a reworked OpenAI-compatible backend (with HTTP 429 handling) into six2dez/burp-ai-agent, with registry, settings, and config-panel wiring (Kotlin, PR 44)
 ]
 
 #cventry(
   tl: [*TrashRecon*],
-  tr: [#translate-date(3, 2026)],
+  tr: [#translate-date(3, 2026) -- #translate-date(6, 2026)],
   bl: [#githublink("Somchandra17/TrashRecon")],
   br: [],
 )[
-- Dockerized a reconnaissance framework chaining ~17 tools across ten phases from subdomain enumeration through optional nuclei.
-- Supported resume and structured JSON outputs for external attack-surface mapping.
-]
-
-#cventry(
-  tl: [*TrashFrame*],
-  tr: [#translate-date(6, 2026)],
-  bl: [#githublink("Somchandra17/TrashFrame")],
-  br: [#link("https://frames.somm.tf")[frames.somm.tf]],
-)[
-- Built a Next.js app that turns Spotify album/track links into printable multi-theme posters with DPI export (frames.somm.tf).
-]
-
-#cventry(
-  tl: [*w-bonkers*],
-  tr: [#translate-date(7, 2026)],
-  bl: [#githublink("Somchandra17/w-bonkers")],
-  br: [],
-)[
-- Built a Python NSE portfolio autopilot for Claude Code/Codex with a deterministic `state.json` engine and Todoist order loop (local archives; no auto-trading).
+- Dockerized recon across 17 tools and 10 phases, with resume support and structured JSON so finished tool outputs are skipped on rerun
 ]
 
 == Certifications
 
-#cventry(
-  tl: [*CompTIA Security+ (SY0-701)*],
-  tr: [#translate-date(12, 2024)],
-  bl: [by CompTIA],
-  br: [],
-)[]
-
-#cventry(
-  tl: [*eWPTXv2 - eLearnSecurity Web Application Penetration Tester eXtreme*],
-  tr: [#translate-date(1, 2023)],
-  bl: [by eLearnSecurity],
-  br: [],
-)[]
-
+- *eWPTXv2* -- eLearnSecurity Web Application Penetration Tester eXtreme, #translate-date(1, 2023)
+- *CompTIA Security+ (SY0-701)*, #translate-date(12, 2024)
 
 == Achievements
 
-*Top 1% on TryHackMe*
-
-*Security Recognition*
-- *Mastercard Inc.*: SSTI escalated to LFI (P1)
-- *Rakuten*: Session Fixation (P2)
-- *Chaturbate Inc.*: Stored XSS (P2)
-
-*20+ NCIIPC India Acknowledgments*
-- Reported client-side authentication bypass, missing rate limits, XSS, SQL injection, and account takeover vulnerabilities through responsible disclosure.
-
-*CTFs*
-- 5th Place, OWASPLPU CTF 2022
-- 9th Place, WTFCTF 2022
-- 34th Place, RuCTF 2022
+- *Hall of Fame disclosures*: Mastercard Inc. SSTI escalated to LFI (P1); Rakuten session fixation (P2); Chaturbate Inc. stored XSS (P2)
+- *20+ NCIIPC India responsible-disclosure acknowledgments*: client-side authentication bypass, missing rate limits, XSS, SQL injection, and account takeover
+- *Top 1%* on #link("https://tryhackme.com/p/somchandra17")[TryHackMe]
+- *CTF*: 5th place, OWASPLPU CTF 2022; 9th place, WTFCTF 2022; 34th place, RuCTF 2022
 
 == Education
 
@@ -183,5 +146,4 @@
   br: [],
 )[
 - Specialization: Cybersecurity and Blockchain
-- CGPA: 7.73
 ]
