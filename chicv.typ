@@ -62,11 +62,13 @@
   })
 }
 
+// `#" "` is a real space glyph. Markup spaces next to `h(1fr)` collapse, so parsers
+// that join same-line text read "Cyber Security EngineerBengaluru" without it.
 #let cvhead(tl, tr, bl, br) = {
-  [#tl #h(1fr) #tr]
+  [#tl#" "#h(1fr)#tr]
   if bl != [] or br != [] {
     linebreak()
-    [#bl #h(1fr) #br]
+    [#bl#" "#h(1fr)#br]
   }
 }
 

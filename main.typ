@@ -26,11 +26,12 @@
 
 == Technical Skills
 
-- *Application & API Security*: gray-box web/API VAPT, OWASP Top 10, GraphQL security, CVSS scoring and SLA mapping
+- *Application & API Security*: gray-box web/API penetration testing (VAPT), OWASP Top 10, GraphQL security, CVSS-to-SLA mapping
 - *Mobile Offensive Security*: Android/iOS SAST/DAST, OWASP MASTG/MASVS, Frida/objection, SSL pinning, root/jailbreak detection
 - *Security Automation*: Burp extension development (Montoya API/Java, Extender API/Jython), Python, Kotlin, FastAPI, VAPT-to-Jira
 - *Attack Surface*: external recon and exposure checks (subfinder, amass, httpx, testssl.sh), Nessus scanning, and CVE validation before public templates
-- *Incident response*: credential-exposure response, secrets inventory, and read-only rotation checks
+- *Incident Response*: credential-exposure response, secrets inventory, and read-only rotation checks
+- *Tools*: Burp Suite, Frida, objection, adb, drozer, apktool, Nessus, nuclei, libimobiledevice, Docker, Jira, AWS
 
 == Experience
 
@@ -94,7 +95,7 @@
   br: [],
 )[
 - Built the public counterpart of the internal Android DAST framework: nine Python phases orchestrating adb, drozer, apktool, and sqlite3
-- Covered exported-component SQLi and path traversal, SQLite deep-dumps, logcat, heap and /proc maps, ADB backup, manifest review, post-logout re-launch and intent extras, and PII and secret detection
+- Covered exported-component SQL injection and path traversal, SQLite deep-dumps, logcat, heap and /proc maps, ADB backup, manifest review, post-logout re-launch and intent extras, and PII and secret detection
 - Added Frida 17 bypasses for SSL pinning, root detection, and debugger detection, plus an AI-review triage package
 ]
 
