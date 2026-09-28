@@ -30,7 +30,7 @@
 - *Mobile Offensive Security*: Android/iOS SAST/DAST, OWASP MASTG/MASVS, Frida/objection, SSL pinning, root/jailbreak detection
 - *Security Automation*: Burp extension development (Montoya API/Java, Extender API/Jython), Python, Kotlin, FastAPI, VAPT-to-Jira
 - *Attack Surface*: external recon and exposure checks (subfinder, amass, httpx, testssl.sh), Nessus scanning, and CVE validation before public templates
-- *Incident Response*: credential-exposure response, secrets inventory, and read-only rotation checks
+- *Incident Response*: root-cause analysis, attack reconstruction, credential-exposure response, and read-only rotation checks
 - *Tools*: Burp Suite, Frida, objection, adb, drozer, apktool, Nessus, nuclei, libimobiledevice, Docker, Jira, AWS
 
 == Experience
@@ -42,13 +42,14 @@
   br: [Bengaluru, India],
 )[
 - Reported 156 FY2025--26 VAPT findings across 10 internal cycles on web, API, and Android, including an unauthenticated API, IDOR in billing reports, and a WebSocket leaking live cab location; drove CVSS-to-SLA remediation with engineering; 180 tickets reported, 100+ assigned, about 93% of assigned tickets closed
+- Led root-cause analysis and attack reconstruction for a CI/CD server intrusion, tracing 3 separate attacker visits from on-host artifacts (file read, credential decryption, RCE, root), and wrote the hardening worklist for the rebuilt host
+- Drove credential-exposure response: triaged the leaked secrets into a per-service rotation tracker, checked keys read-only from the owner side, and caught keys reported as rotated that were still live
 - Built a 9-phase Android DAST framework (adb, drozer, apktool) that cut per-app assessment from 1--2 days to under 1 hour (about 90%), and that work contributed to the team declining a paid PortSwigger Burp DAST purchase
 - Built *GQLSweep*, a Burp extension running 170+ automated GraphQL checks across 12 categories from one right-click, surfacing alias-abuse DoS and excessive data exposure later confirmed by an external vendor
-- Owned external VAPT across four vendors and four major cycles (web, Android, iOS, Driver App): false-positive filtering, compensating controls the vendor accepted, revalidation, and on-time reports for enterprise audits
+- Owned external VAPT across four vendors and four major cycles (web, Android, iOS, Driver App): false-positive filtering (such as an SSL-pinning bypass that needed a rooted device and did not reproduce on production), compensating controls the vendor accepted, revalidation, and on-time reports for enterprise audits
 - Built a Java Burp extension that decodes and re-encodes the Driver App zlib-compressed integer-array protocol, unlocking active testing of that traffic; later ported the extension to the Montoya API
-- Showed an Android SSL-pinning bypass needed a rooted, instrumented device and did not reproduce on the production build
 - Ran the first in-house AI/LLM assessment of an internal chatbot; prompt injection bypassed tool-persona and policy controls, and that work became a reusable method for later assessments
-- Migrated *Nessus* from Azure Windows to hardened AWS Linux and automated weekly Advanced scans (Sunday IST), with reports uploaded to Google Drive
+- Migrated *Nessus* from Azure Windows to hardened AWS Linux and automated weekly Advanced scans
 - Built *External VAPT to Jira*, which files an external VAPT report into Jira in one click instead of a 4--5 hour manual pass, and does not post until it is approved
 - Built *VAPT Revalidator*, a FastAPI worker that retests IDOR and broken access control through Burp and writes the Jira comment only after a person approves it
 - Manually validated Apache Tomcat CVE-2025-66614 (client-certificate verification bypass) and CVE-2026-24734 (OCSP revocation bypass) on UAT before public nuclei templates existed, and shared the results as a team reference
@@ -56,13 +57,13 @@
 
 #cventry(
   tl: [*MoveInSync*],
-  tr: [#translate-date(1, 2025) -- #translate-date(5, 2025)],
+  tr: [#translate-date(3, 2024) -- #translate-date(6, 2025)],
   bl: [_Application Security Intern_],
   br: [Bengaluru, India],
 )[
-- Raised critical reflected XSS findings on the transport-management API in an internal Apr--May 2025 manual and automated VAPT, and published the report
-- Escalated critical issues to engineering leads the same day during a May 2025 production-clone assessment
-- Surfaced a gap on an Employee Experience employee-data call during a May 2025 authentication retrofit; engineering wrapped the call in authentication
+- Raised critical reflected XSS findings on the transport-management API in internal manual and automated VAPT, and published the report
+- Escalated critical issues to engineering leads the same day during a production-clone assessment
+- Surfaced a gap on an Employee Experience employee-data call during an authentication retrofit; engineering wrapped the call in authentication
 ]
 ]
 

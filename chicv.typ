@@ -16,7 +16,7 @@
 }
 
 // Extra space between bullets, on top of the line box. Page 1 is the looser zone.
-#let list-gap = (1.28em, 1.85em)
+#let list-gap = (1.16em, 1.85em)
 
 #let rule-stroke = 0.5pt + luma(125)
 
