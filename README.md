@@ -28,10 +28,24 @@ I edit the Word version in `Som_Chandra_Resume.docx` and export it with LibreOff
 soffice --headless --convert-to pdf Som_Chandra_Resume.docx
 ```
 
+## Cover letter
+
+`cover-letter/Som_Chandra_Cover_Letter.pdf` is my general cover letter, addressed to "Hiring Team". To tailor it, I pass the company, role, and hiring manager, plus an optional sentence on why I want to work there:
+
+```bash
+cd cover-letter
+typst compile cover-letter.typ Som_Chandra_Cover_Letter_Acme.pdf \
+  --input company="Acme" --input role="Product Security Engineer" \
+  --input manager="Jane Doe" --input why="One sentence on why Acme."
+```
+
+The date is set when I build it.
+
 ## Files
 
 - `main.typ`, `chicv.typ`: content and style for `main.pdf`
 - `main-jetbrains.typ`, `chicv-jetbrains.typ`: the JetBrains Mono variant
+- `cover-letter/cover-letter.typ`: the cover letter, in the same type as `main.pdf`
 
 ## Contact
 

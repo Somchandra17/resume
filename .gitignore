@@ -1,3 +1,6 @@
 .DS_Store
 *.tmp
 Som Chandra.pdf
+
+# Tailored cover letters name the companies I apply to; keep them off the public repo
+cover-letter/Som_Chandra_Cover_Letter_*.pdf
